@@ -12,10 +12,10 @@ public class Game {
 
     Game(int playersNumber){
         switch(playersNumber) {
-            case 3: initializeFor3();
-            case 4: initializeFor4();
-            case 5: initializeFor5();
-            case 6: initializeFor6();
+            case 3: initializeFor3(); break;
+            case 4: initializeFor4(); break;
+            case 5: initializeFor5(); break;
+            case 6: initializeFor6(); break;
         }
     }
 

@@ -1,5 +1,7 @@
 package wallet_pack;
 
+import exception_pack.NotEnoughGold;
+
 public class Wallet {
     static final int MAX_GOLD = 19;
     static final int INITIAL_GOLD = 5;
@@ -11,53 +13,51 @@ public class Wallet {
         availableGold = MAX_GOLD - INITIAL_GOLD;
     }
 
-    public int getCurrentGold() {
-        return currentGold;
-    }
-
-    public int getAvailableGold() {
-        return availableGold;
-    }
-
-    public boolean isAvailable(int amount) {
-        if (amount <= currentGold) return true;
-        return false;
-    }
-
-    public boolean isAvailableToEarn(int amount) {
-        if (amount <= availableGold) return true;
-        return false;
-    }
-
-    public boolean addGold(int amount) {
-        if (amount <= availableGold) {
+    public void addGold(int amount) throws NotEnoughGold {
+        if (isAvailableToEarn(amount)) {
             currentGold += amount;
             availableGold -= amount;
-            return true;
+            return;
         }
         currentGold += availableGold;
         availableGold = 0;
-        return false;
+        throw new NotEnoughGold(false);
     }
 
-    public boolean substractGold(int amount) {
+    public void substractGold(int amount) throws NotEnoughGold {
         if(isAvailable(amount)) {
             currentGold -= amount;
             availableGold += amount;
-            return true;
+            return;
         }
-        return false;
+        throw new NotEnoughGold(true);
     }
 
-    public boolean putOneOnMap() {
+    public void putOneOnMap() throws NotEnoughGold {
         if (isAvailable(1)) {
             currentGold--;
-            return true;
+            return;
         }
-        return false;
+        throw new NotEnoughGold(true);
     }
 
     public void takeOneFromMap() {
         availableGold++;
+    }
+    public int getCurrentGold() {
+        return currentGold;
+    }
+    public int getAvailableGold() {
+        return availableGold;
+    }
+
+    private boolean isAvailable(int amount) {
+        if (amount <= currentGold) return true;
+        return false;
+    }
+
+    private boolean isAvailableToEarn(int amount) {
+        if (amount <= availableGold) return true;
+        return false;
     }
 }

@@ -46,6 +46,4 @@ public abstract class Location {
 
     public abstract int getSupplies();
     public abstract int getVictory();
-    public abstract int addLocation(Location location);
-    public abstract int substractLocation(Location location);
 }

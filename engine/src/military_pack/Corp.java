@@ -2,23 +2,6 @@ package military_pack;
 
 public class Corp {
     private int Infantry;
-
-    public int getInfantry() {
-        return Infantry;
-    }
-
-    public int getCavalry() {
-        return Cavalry;
-    }
-
-    public int getShip() {
-        return Ship;
-    }
-
-    public int getTower() {
-        return Tower;
-    }
-
     private int Cavalry;
     private int Ship;
     private int Tower;
@@ -43,6 +26,7 @@ public class Corp {
             this.Cavalry -= Cavalry;
             this.Ship -= Ship;
             this.Tower -= Tower;
+            return true;
         }
         return false;
     }
@@ -53,5 +37,12 @@ public class Corp {
         if (this.Ship < Ship) return false;
         if (this.Tower < Tower) return false;
         return true;
+    }
+
+    public int getInfantry() { return Infantry; }
+    public int getCavalry() { return Cavalry; }
+    public int getShip() { return Ship; }
+    public int getTower() {
+        return Tower;
     }
 }

@@ -3,7 +3,7 @@ package order_pack;
 public abstract class Order {
     private boolean isStar;
     private int modifier;
-    boolean isAvailable;
+    private boolean isAvailable;
 
     public Order (boolean Star, int modifier){
         isStar = Star;
@@ -11,19 +11,15 @@ public abstract class Order {
         this.modifier = modifier;
     }
 
-    boolean isAvailable(){
+    public boolean isAvailable(){
         return isAvailable;
     }
-
-
-    public boolean getNumberOfStar() {
+    public boolean isStar() {
         return isStar;
     }
-
     public int getModifier() {
         return modifier;
     }
-
 
     abstract void execute();
 }
