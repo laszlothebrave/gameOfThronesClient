@@ -30,7 +30,9 @@ public class OrderList {
 
     void giveOrder(Order order, Location location) throws WrongOrder {
         if (order.isAvailable()) throw new WrongOrder();
-        if (loca)
+    }
+
+    void backOrder(Location location) throws WrongOrder {
 
     }
 }

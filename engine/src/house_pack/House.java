@@ -1,28 +1,40 @@
 package house_pack;
 
+import exception_pack.WinException;
 import map_pack.*;
 import military_pack.LeaderList;
 
 public class House {
-    int suppliesPath;
-    int victoryPath;
-    Location locationList;
-    LeaderList leaderList;
+    private HouseName name;
+    private int suppliesPath;
+    private int victoryPath;
+    private LocationList locationList;
+    private LeaderList leaderList;
 
-    public House(int suppliesPath, int victoryPath){
+    public House(int suppliesPath, int victoryPath, HouseName name){
         this.suppliesPath = suppliesPath;
         this.victoryPath = victoryPath;
+        this.name = name;
     }
 
     public void updateSuppliesPath(){
         suppliesPath = locationList.getSupplies();
     }
 
-    public void updateVictoryPath(){
+    public void updateVictoryPath() throws WinException {
         victoryPath = locationList.getVictory();
     }
 
-    public void addLocation(Location location){
-        locationList.addLocation(location);
+    public HouseName getName() {
+        return name;
     }
+
+    public LocationList getLocationList() {
+        return locationList;
+    }
+
+    public LeaderList getLeaderList() {
+        return leaderList;
+    }
+
 }

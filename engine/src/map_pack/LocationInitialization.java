@@ -1,33 +1,25 @@
 package map_pack;
 
+import java.util.ArrayList;
+
 public class LocationInitialization {
-    private static Location location[];
-    public static Location[] create(int numberOfPlayers){
+    private static ArrayList <Location> locationList;
+
+    public static ArrayList<Location> create(int numberOfPlayers){
         int numberOfLocation;
-        if (numberOfPlayers == 3) {
+        locationList = new ArrayList<Location>();
+        if (numberOfPlayers >= 3) {
+            locationList.add(new Location)
+        }
+        if (numberOfPlayers >= 4) {
 
         }
-        if (numberOfPlayers == 3) {
+        if (numberOfPlayers >= 5) {
 
         }
-        if (numberOfPlayers == 3) {
+        if (numberOfPlayers >= 6) {
 
         }
-        if (numberOfPlayers == 3) {
-
-        }
-    }
-
-    private static void createFor6() {
-    }
-
-    private static void createFor5() {
-    }
-
-    private static void createFor4() {
-    }
-
-    private static void createFor3() {
-
+        return locationList;
     }
 }

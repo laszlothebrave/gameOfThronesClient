@@ -1,9 +1,18 @@
 package message_pack;
 
-public class SelectHouseChooseMode {
-    public ChooseMode HouseChooseMode;
+import main_pack.PlayerName;
 
-    public SelectHouseChooseMode(ChooseMode chooseMode){
+import java.io.Serializable;
+
+public class SelectHouseChooseMode extends Message implements Serializable{
+    private ChooseMode HouseChooseMode;
+
+    public SelectHouseChooseMode(PlayerName player, ChooseMode chooseMode){
+        super(player);
         this.HouseChooseMode = chooseMode;
+    }
+
+    public ChooseMode getHouseChooseMode() {
+        return HouseChooseMode;
     }
 }
