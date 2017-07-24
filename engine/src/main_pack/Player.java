@@ -1,24 +1,22 @@
 package main_pack;
 
-import corps_pack.Corps;
-import map_pack.Location;
-import order_pack.Orders;
+import military_pack.Corp;
+import house_pack.House;
+import order_pack.OrderList;
+import wallet_pack.Wallet;
 
-/**
-    Klasa realizująca działania gracza
- */
 public class Player {
-    Location locations;
-    Orders orders;
-    Corps corps;
-    int suppliesPath;
-    int victoryPath;
-    int influenceThrone;
-    int influenceSword;
-    int influenceRaven;
-    int maxGold;
-    int currentGold;
-    Player(){
+    String playerName;
+    Wallet wallet;
+    Corp corp;
+    OrderList orderList;
+    House house;
 
+    Player(House house, String playerName){
+        this.playerName = playerName;
+        wallet = new Wallet();
+        corp = new Corp(10, 5, 6, 2);
+        orderList = new OrderList();
+        this.house = house;
     }
 }
