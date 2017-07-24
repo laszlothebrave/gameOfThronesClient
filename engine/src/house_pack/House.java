@@ -5,7 +5,7 @@ import map_pack.*;
 import military_pack.LeaderList;
 
 public class House {
-    private HouseName name;
+    private HouseName houseName;
     private int suppliesPath;
     private int victoryPath;
     private LocationList locationList;
@@ -14,7 +14,7 @@ public class House {
     public House(int suppliesPath, int victoryPath, HouseName name){
         this.suppliesPath = suppliesPath;
         this.victoryPath = victoryPath;
-        this.name = name;
+        this.houseName = name;
     }
 
     public void updateSuppliesPath(){
@@ -25,8 +25,8 @@ public class House {
         victoryPath = locationList.getVictory();
     }
 
-    public HouseName getName() {
-        return name;
+    public HouseName getHouseName() {
+        return houseName;
     }
 
     public LocationList getLocationList() {

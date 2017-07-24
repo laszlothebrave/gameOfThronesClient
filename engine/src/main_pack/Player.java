@@ -8,13 +8,13 @@ import order_pack.OrderList;
 import wallet_pack.Wallet;
 
 public class Player {
-    private String playerName;
+    private PlayerName playerName;
     private Wallet wallet;
     private Corp corp;
     private OrderList orderList;
     private House house;
 
-    Player(House house, String playerName){
+    Player(House house, PlayerName playerName){
         this.playerName = playerName;
         wallet = new Wallet();
         corp = new Corp(10, 5, 6, 2);
@@ -23,7 +23,7 @@ public class Player {
     }
 
     public String getPlayerName() {
-        return playerName;
+        return playerName.getName();
     }
 
     public Wallet getWallet() {

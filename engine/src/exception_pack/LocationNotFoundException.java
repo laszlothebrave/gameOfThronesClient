@@ -7,5 +7,6 @@ public class LocationNotFoundException extends Exception{
 
     public LocationNotFoundException(Location location){
         this.location = location;
+        System.out.print("Location not found\n");
     }
 }

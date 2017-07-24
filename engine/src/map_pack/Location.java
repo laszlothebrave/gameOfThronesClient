@@ -8,11 +8,24 @@ public abstract class Location {
     String name;
     Player owner;
     Corp corp;
+    Corp selectedCorp;
+
+    public Corp getSelectedCorp() {
+        return selectedCorp;
+    }
+
+    public Corp getBrokenCorp() {
+        return brokenCorp;
+    }
+
+    Corp brokenCorp;
     Order order;
     Location(String name){
         this.name = name;
         owner = null;
         corp = new Corp(0, 0, 0, 0);
+        selectedCorp = new Corp(0, 0, 0, 0);
+        brokenCorp = new Corp(0, 0, 0, 0);
         order = null;
     }
 

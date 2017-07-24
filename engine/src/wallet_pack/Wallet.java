@@ -1,6 +1,6 @@
 package wallet_pack;
 
-import exception_pack.NotEnoughGold;
+import exception_pack.*;
 
 public class Wallet {
     static final int MAX_GOLD = 19;
@@ -13,7 +13,7 @@ public class Wallet {
         availableGold = MAX_GOLD - INITIAL_GOLD;
     }
 
-    public void addGold(int amount) throws NotEnoughGold {
+    public void addGold(int amount) throws NotEnoughAvailableGold {
         if (isAvailableToEarn(amount)) {
             currentGold += amount;
             availableGold -= amount;
@@ -21,24 +21,24 @@ public class Wallet {
         }
         currentGold += availableGold;
         availableGold = 0;
-        throw new NotEnoughGold(false);
+        throw new NotEnoughAvailableGold();
     }
 
-    public void substractGold(int amount) throws NotEnoughGold {
+    public void substractGold(int amount) throws NotEnoughCurrentGold {
         if(isAvailable(amount)) {
             currentGold -= amount;
             availableGold += amount;
             return;
         }
-        throw new NotEnoughGold(true);
+        throw new NotEnoughCurrentGold();
     }
 
-    public void putOneOnMap() throws NotEnoughGold {
+    public void putOneOnMap() throws NotEnoughCurrentGold {
         if (isAvailable(1)) {
             currentGold--;
             return;
         }
-        throw new NotEnoughGold(true);
+        throw new NotEnoughCurrentGold();
     }
 
     public void takeOneFromMap() {
