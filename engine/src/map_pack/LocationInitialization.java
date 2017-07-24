@@ -9,7 +9,9 @@ public class LocationInitialization {
         int numberOfLocation;
         locationList = new ArrayList<Location>();
         if (numberOfPlayers >= 3) {
-            locationList.add(new Location)
+            locationList.add(new Land("Czarny zamek", false, 0, 1, 0, false));
+            locationList.add(new Land("Karhold", false, 0, 1, 0, false));
+
         }
         if (numberOfPlayers >= 4) {
 

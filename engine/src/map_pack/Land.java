@@ -1,15 +1,15 @@
 package map_pack;
 
 public class Land extends Location {
-    boolean isStronghold;
-    int supplies;
-    int crown;
-    int castleStrength;
-    boolean isMark;
+    private boolean isCapital;
+    private int supplies;
+    private int crown;
+    private int castleStrength;
+    private boolean isMark;
 
     Land(String name, boolean isStronghold, int supplice, int crown, int castleStrength, boolean isMarked) {
         super(name);
-        this.isStronghold = isStronghold;
+        this.isCapital = isStronghold;
         this.supplies = supplice;
         this.crown = crown;
         this.isMark = isMarked;
