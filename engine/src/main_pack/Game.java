@@ -2,7 +2,10 @@ package main_pack;
 
 import map_pack.Map;
 
-public class Game {
+import java.util.concurrent.LinkedBlockingQueue;
+
+public class Game implements Runnable{
+    public LinkedBlockingQueue queue;
     public int roundCounter;
     public int wildlingsCounter;
     public Player thronePath[];
@@ -10,7 +13,8 @@ public class Game {
     public Player ravenPath[];
     public Map map;
 
-    Game(int playersNumber){
+    public Game(int playersNumber, LinkedBlockingQueue queue){
+        this.queue = queue;
         switch(playersNumber) {
             case 3: initializeFor3(); break;
             case 4: initializeFor4(); break;
@@ -35,4 +39,18 @@ public class Game {
     void nextRouund(){
     }
 
+    @Override
+    public void run() {
+        while(true) {
+            checkmessage();
+        }
+    }
+
+    private void checkmessage() {
+        try {
+            queue.put(queue.take() + " checked");
+        } catch (InterruptedException e){
+
+        }
+    }
 }
