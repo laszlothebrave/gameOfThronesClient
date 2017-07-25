@@ -1,14 +1,14 @@
 package military_pack;
 
-import exception_pack.NotEnoughSoldier;
+import exception_pack.NotEnoughSoldierExeption;
 
-public class Corp {
+public class Army {
     private int Infantry;
     private int Cavalry;
     private int Ship;
     private int Tower;
 
-    public Corp (int Infantry, int Cavalry, int Ship, int Tower){
+    public Army(int Infantry, int Cavalry, int Ship, int Tower){
         this.Infantry = Infantry;
         this.Cavalry = Cavalry;
         this.Ship = Ship;
@@ -22,7 +22,7 @@ public class Corp {
         this.Tower += Tower;
     }
 
-    public void substractSoldier (int Infantry, int Cavalry, int Ship, int Tower) throws NotEnoughSoldier{
+    public void substractSoldier (int Infantry, int Cavalry, int Ship, int Tower) throws NotEnoughSoldierExeption {
         isAvailable(Infantry, Cavalry, Ship, Tower);
         this.Infantry -= Infantry;
         this.Cavalry -= Cavalry;
@@ -30,11 +30,11 @@ public class Corp {
         this.Tower -= Tower;
     }
 
-    public void isAvailable(int Infantry, int Cavalry, int Ship, int Tower) throws NotEnoughSoldier{
-        if (this.Infantry < Infantry) throw new NotEnoughSoldier();
-        if (this.Cavalry < Cavalry) throw new NotEnoughSoldier();
-        if (this.Ship < Ship) throw new NotEnoughSoldier();
-        if (this.Tower < Tower) throw new NotEnoughSoldier();
+    public void isAvailable(int Infantry, int Cavalry, int Ship, int Tower) throws NotEnoughSoldierExeption {
+        if (this.Infantry < Infantry) throw new NotEnoughSoldierExeption();
+        if (this.Cavalry < Cavalry) throw new NotEnoughSoldierExeption();
+        if (this.Ship < Ship) throw new NotEnoughSoldierExeption();
+        if (this.Tower < Tower) throw new NotEnoughSoldierExeption();
     }
 
     public int getInfantry() { return Infantry; }

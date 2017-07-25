@@ -1,8 +1,8 @@
 package map_pack;
 
 public class Sea extends Location {
-    Sea(String name) {
-        super(name);
+    Sea(LocationName locationName) {
+        super(locationName);
     }
 
     public int getSupplies(){

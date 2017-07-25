@@ -1,8 +1,7 @@
 package main_pack;
 
 import map_pack.Location;
-import map_pack.LocationList;
-import military_pack.Corp;
+import military_pack.Army;
 import house_pack.House;
 import order_pack.OrderList;
 import wallet_pack.Wallet;
@@ -10,16 +9,16 @@ import wallet_pack.Wallet;
 public class Player {
     private PlayerName playerName;
     private Wallet wallet;
-    private Corp corp;
+    private Army army;
     private OrderList orderList;
     private House house;
 
-    Player(House house, PlayerName playerName){
+    Player(PlayerName playerName){
         this.playerName = playerName;
         wallet = new Wallet();
-        corp = new Corp(10, 5, 6, 2);
+        army = new Army(10, 5, 6, 2);
         orderList = new OrderList();
-        this.house = house;
+        this.house = null;
     }
 
     public String getPlayerName() {
@@ -30,8 +29,8 @@ public class Player {
         return wallet;
     }
 
-    public Corp getCorp() {
-        return corp;
+    public Army getArmy() {
+        return army;
     }
 
     public OrderList getOrderList() {

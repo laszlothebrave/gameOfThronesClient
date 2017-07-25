@@ -1,31 +1,31 @@
 package map_pack;
 
-import military_pack.Corp;
+import military_pack.Army;
 import order_pack.Order;
 import main_pack.Player;
 
 public abstract class Location {
-    String name;
+    LocationName locationName;
     Player owner;
-    Corp corp;
-    Corp selectedCorp;
+    Army army;
+    Army selectedArmy;
 
-    public Corp getSelectedCorp() {
-        return selectedCorp;
+    public Army getSelectedArmy() {
+        return selectedArmy;
     }
 
-    public Corp getBrokenCorp() {
-        return brokenCorp;
+    public Army getRoutedArmy() {
+        return routedArmy;
     }
 
-    Corp brokenCorp;
+    Army routedArmy;
     Order order;
-    Location(String name){
-        this.name = name;
+    Location(LocationName locationName){
+        this.locationName = locationName;
         owner = null;
-        corp = new Corp(0, 0, 0, 0);
-        selectedCorp = new Corp(0, 0, 0, 0);
-        brokenCorp = new Corp(0, 0, 0, 0);
+        army = new Army(0, 0, 0, 0);
+        selectedArmy = new Army(0, 0, 0, 0);
+        routedArmy = new Army(0, 0, 0, 0);
         order = null;
     }
 
@@ -33,8 +33,8 @@ public abstract class Location {
         this.owner = owner;
     }
 
-    public void setCorp(Corp corp) {
-        this.corp = corp;
+    public void setArmy(Army army) {
+        this.army = army;
     }
 
     public void setOrder(Order order) {
@@ -42,15 +42,15 @@ public abstract class Location {
     }
 
     public String getName() {
-        return name;
+        return locationName.getName();
     }
 
     public Player getOwner() {
         return owner;
     }
 
-    public Corp getCorp() {
-        return corp;
+    public Army getArmy() {
+        return army;
     }
 
     public Order getOrder() {

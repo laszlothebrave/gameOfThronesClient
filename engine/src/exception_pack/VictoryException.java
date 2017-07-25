@@ -2,10 +2,10 @@ package exception_pack;
 
 import main_pack.Player;
 
-public class WinException extends Exception{
+public class VictoryException extends Exception{
     public Player Winner;
 
-    public WinException(Player Winner){
+    public VictoryException(Player Winner){
         System.out.print("Winner is " + Winner.getPlayerName() + "of house " + Winner.getHouse().getHouseName().getName());
         this.Winner = Winner;
     }

@@ -1,24 +1,28 @@
 package order_pack;
 
 public abstract class Order {
-    private boolean isStar;
+    private boolean hasStar;
     private int modifier;
     private boolean isAvailable;
 
-    public Order (boolean Star, int modifier){
-        isStar = Star;
-        isAvailable = true;
+    public Order (boolean hasStar, int modifier){
+        this.hasStar = hasStar;
         this.modifier = modifier;
+        isAvailable = true;
     }
 
     public boolean isAvailable(){
         return isAvailable;
     }
-    public boolean isStar() {
-        return isStar;
+    public boolean hasStar() {
+        return hasStar;
     }
     public int getModifier() {
         return modifier;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     abstract void execute();

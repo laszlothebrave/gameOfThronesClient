@@ -7,12 +7,12 @@ public class Land extends Location {
     private int castleStrength;
     private boolean isMark;
 
-    Land(String name, boolean isStronghold, int supplice, int crown, int castleStrength, boolean isMarked) {
-        super(name);
-        this.isCapital = isStronghold;
+    Land(LocationName locationName, int supplice, int crown, int castleStrength) {
+        super(locationName);
+        this.isCapital = false;
         this.supplies = supplice;
         this.crown = crown;
-        this.isMark = isMarked;
+        this.isMark = false;
     }
 
     public int getSupplies(){

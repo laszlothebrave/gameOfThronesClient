@@ -1,8 +1,8 @@
 package map_pack;
 
 public class Port extends  Location {
-    Port(String name) {
-        super(name);
+    Port(LocationName locationName) {
+        super(locationName);
     }
 
     public int getSupplies(){

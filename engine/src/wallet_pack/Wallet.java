@@ -3,61 +3,55 @@ package wallet_pack;
 import exception_pack.*;
 
 public class Wallet {
-    static final int MAX_GOLD = 19;
+    static final int MAX_GOLD = 20;
     static final int INITIAL_GOLD = 5;
-    private int availableGold;
-    private int currentGold;
+    private int bankGold;
+    private int playerGold;
 
     public Wallet() {
-        currentGold = INITIAL_GOLD;
-        availableGold = MAX_GOLD - INITIAL_GOLD;
+        playerGold = INITIAL_GOLD;
+        bankGold = MAX_GOLD - INITIAL_GOLD;
     }
 
-    public void addGold(int amount) throws NotEnoughAvailableGold {
-        if (isAvailableToEarn(amount)) {
-            currentGold += amount;
-            availableGold -= amount;
-            return;
+    public void addGold(int amount) throws NoBankGoldExeption {
+        if (!hasBank(amount)) {
+            playerGold += bankGold;
+            bankGold = 0;
+            throw new NoBankGoldExeption();
         }
-        currentGold += availableGold;
-        availableGold = 0;
-        throw new NotEnoughAvailableGold();
+        playerGold += amount;
+        bankGold -= amount;
     }
 
-    public void substractGold(int amount) throws NotEnoughCurrentGold {
-        if(isAvailable(amount)) {
-            currentGold -= amount;
-            availableGold += amount;
-            return;
-        }
-        throw new NotEnoughCurrentGold();
+    public void substractGold(int amount) throws NoPlayerGoldExeption {
+        if(!hasPlayer(amount)) throw new NoPlayerGoldExeption();
+        playerGold -= amount;
+        bankGold += amount;
     }
 
-    public void putOneOnMap() throws NotEnoughCurrentGold {
-        if (isAvailable(1)) {
-            currentGold--;
-            return;
-        }
-        throw new NotEnoughCurrentGold();
+    public void putOneOnMap() throws NoPlayerGoldExeption {
+        if (!hasPlayer(1)) throw new NoPlayerGoldExeption();
+        playerGold--;
     }
 
     public void takeOneFromMap() {
-        availableGold++;
-    }
-    public int getCurrentGold() {
-        return currentGold;
-    }
-    public int getAvailableGold() {
-        return availableGold;
+        bankGold++;
     }
 
-    private boolean isAvailable(int amount) {
-        if (amount <= currentGold) return true;
+    public int getPlayerGold() {
+        return playerGold;
+    }
+    public int getBankGold() {
+        return bankGold;
+    }
+
+    private boolean hasPlayer(int amount) {
+        if (amount <= playerGold) return true;
         return false;
     }
 
-    private boolean isAvailableToEarn(int amount) {
-        if (amount <= availableGold) return true;
+    private boolean hasBank(int amount) {
+        if (amount <= bankGold) return true;
         return false;
     }
 }

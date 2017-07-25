@@ -1,8 +1,9 @@
 package order_pack;
 
 public class GetTaxes extends Order {
-    public GetTaxes(boolean Star, int Modyfier) {
-        super(Star, Modyfier);
+
+    public GetTaxes(boolean Star, int Modifier) {
+        super(Star, Modifier);
     }
 
     public void execute(){

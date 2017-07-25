@@ -1,6 +1,6 @@
 package military_pack;
 
-import exception_pack.NotEnoughSoldier;
+import exception_pack.NotEnoughSoldierExeption;
 import main_pack.Player;
 import map_pack.Location;
 
@@ -15,19 +15,19 @@ public class MoveCorp {
 
     public static void retreatAtacker(Location location){
         try {
-            location.getSelectedCorp().substractSoldier(0, 0, 0, location.getSelectedCorp().getTower());
-        } catch (NotEnoughSoldier e) {
+            location.getSelectedArmy().substractSoldier(0, 0, 0, location.getSelectedArmy().getTower());
+        } catch (NotEnoughSoldierExeption e) {
 
         }
-        move(location.getSelectedCorp(), location.getBrokenCorp());
+        move(location.getSelectedArmy(), location.getRoutedArmy());
     }
 
     private static void atack(){
 
     }
 
-    private static void move(Corp source, Corp destination){
+    private static void move(Army source, Army destination){
         destination.addSoldier(source.getInfantry(), source.getCavalry(), source.getShip(), source.getTower());
-        source = new Corp(0, 0, 0, 0);
+        source = new Army(0, 0, 0, 0);
     }
 }

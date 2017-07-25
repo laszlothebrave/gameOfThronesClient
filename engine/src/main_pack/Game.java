@@ -36,7 +36,7 @@ public class Game implements Runnable{
     private void initializeFor6() {
     }
 
-    void nextRouund(){
+    void nextRound(){
     }
 
     @Override

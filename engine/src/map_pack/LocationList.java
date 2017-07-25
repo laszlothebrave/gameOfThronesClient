@@ -3,28 +3,31 @@ package map_pack;
 import exception_pack.*;
 import main_pack.Player;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LocationList {
-    private Location locationTab[];
-    private int numberOfLocation;
-    public LocationList(int size){
-        locationTab = new Location[size];
-        numberOfLocation = 0;
+
+    private HashMap<LocationName,Location> locationHashMap;
+
+    public LocationList(int numberOfPlayer){
+        locationHashMap = LocationInitialization.create(numberOfPlayer);
     }
 
     public int getSupplies(){
         int result = 0;
-        for (Location location : locationTab){
-            result += location.getSupplies();
+        for (Map.Entry<LocationName, Location> entry : locationHashMap.entrySet()){
+            result += entry.getValue().getSupplies();
         }
         return result;
     }
 
-    public int getVictory() throws WinException {
+    public int getVictory() throws VictoryException {
         int result = 0;
-        for (Location location : locationTab){
-            result += location.getVictory();
+        for (Map.Entry<LocationName, Location> entry : locationHashMap.entrySet()){
+            result += entry.getValue().getVictory();
         }
-        if (result >= 7) throw new WinException(locationTab[1].getOwner());
+        if (result >= 7) throw new VictoryException(locationTab[1].getOwner());
         return result;
     }
 
@@ -47,5 +50,9 @@ public class LocationList {
             position++;
         }
         throw new LocationNotFoundException(location);
+    }
+
+    public HashMap<LocationName, Location> getLocationHashMap() {
+        return locationHashMap;
     }
 }

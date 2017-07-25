@@ -1,13 +1,15 @@
 package order_pack;
 
-import exception_pack.WrongOrder;
+import exception_pack.InvalidOrderExeption;
+import main_pack.Player;
+import main_pack.PlayerName;
 import map_pack.Location;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderList {
     private ArrayList<Order> orderList;
+    private int numberOfStar;
 
     public OrderList(){
         orderList = new ArrayList<Order>();
@@ -28,11 +30,29 @@ public class OrderList {
         orderList.add(new Support(true, 0));
     }
 
-    void giveOrder(Order order, Location location) throws WrongOrder {
-        if (order.isAvailable()) throw new WrongOrder();
+    public void giveOrder(Order order, Location location, Player player) throws InvalidOrderExeption {
+        if (!order.isAvailable()) throw new InvalidOrderExeption();
+        if (location.getOwner() != player) throw new InvalidOrderExeption();
+        if (order.hasStar() && (numberOfStar==0)) throw new InvalidOrderExeption();
+        if (location.getOrder() != null) throw new InvalidOrderExeption();
+        order.setAvailable(false);
+        if(order.hasStar()) numberOfStar--;
+        location.setOrder(order);
     }
 
-    void backOrder(Location location) throws WrongOrder {
+    public void backOrder(Location location, Player player) throws InvalidOrderExeption {
+        if (location.getOwner() != player) throw new InvalidOrderExeption();
+        if (location.getOrder() != null) throw new InvalidOrderExeption();
+        if(location.getOrder().hasStar()) numberOfStar++;
+        location.getOrder().setAvailable(true);
+        location.setOrder(null);
+    }
 
+    public void setNumberOfStar(int numberOfStar) {
+        this.numberOfStar = numberOfStar;
+    }
+
+    public int getNumberOfStar() {
+        return numberOfStar;
     }
 }
