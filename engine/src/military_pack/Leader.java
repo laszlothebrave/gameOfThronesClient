@@ -1,6 +1,8 @@
 package military_pack;
 
-public class Leader {
+import card_pack.Card;
+
+public class Leader implements Card {
     private int Strength;
     public void execute(){}
     Leader(int Strength){

@@ -1,8 +1,8 @@
 package map_pack;
 
-public class Port extends  Location {
-    Port(LocationName locationName) {
-        super(locationName);
+public class SeaArea extends Area {
+    SeaArea(AreaName areaName) {
+        super(areaName);
     }
 
     public int getSupplies(){

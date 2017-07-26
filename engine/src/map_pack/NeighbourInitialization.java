@@ -5,22 +5,22 @@ import java.util.HashMap;
 
 public class NeighbourInitialization {
 
-    private static HashMap<Location, ArrayList<Location>> neighbourHashMap;
-    private static HashMap<LocationName,Location> locationHashMap;
+    private static HashMap<Area, ArrayList<Area>> neighbourHashMap;
+    private static HashMap<AreaName,Area> areaHashMap;
 
-    public static HashMap<Location,ArrayList <Location>> create(int numberOfPlayer, HashMap<LocationName,Location> locationHashMapOrginal){
-        locationHashMap = locationHashMapOrginal;
+    public static HashMap<Area,ArrayList <Area>> create(int numberOfPlayer, HashMap<AreaName,Area> areaHashMapOrginal){
+        areaHashMap = areaHashMapOrginal;
         neighbourHashMap = new HashMap<>();
-        add(LocationName.winterfell, new LocationName[] {LocationName.portWinterfell});
+        add(AreaName.winterfell, new AreaName[] {AreaName.portWinterfell});
 
         return neighbourHashMap;
     }
 
-    private static void add(LocationName key, LocationName[] neighbourTab){
-        ArrayList<Location> locationArrayList = new ArrayList<>();
-        for (LocationName neighbour : neighbourTab) {
-            locationArrayList.add(locationHashMap.get(neighbour));
+    private static void add(AreaName key, AreaName[] neighbourTab){
+        ArrayList<Area> areaArrayList = new ArrayList<>();
+        for (AreaName neighbour : neighbourTab) {
+            areaArrayList.add(areaHashMap.get(neighbour));
         }
-        neighbourHashMap.put(locationHashMap.get(key), locationArrayList);
+        neighbourHashMap.put(areaHashMap.get(key), areaArrayList);
     }
 }

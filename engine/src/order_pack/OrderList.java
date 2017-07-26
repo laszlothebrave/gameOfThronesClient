@@ -3,7 +3,7 @@ package order_pack;
 import exception_pack.InvalidOrderExeption;
 import main_pack.Player;
 import main_pack.PlayerName;
-import map_pack.Location;
+import map_pack.Area;
 
 import java.util.ArrayList;
 
@@ -30,22 +30,22 @@ public class OrderList {
         orderList.add(new Support(true, 0));
     }
 
-    public void giveOrder(Order order, Location location, Player player) throws InvalidOrderExeption {
+    public void giveOrder(Order order,Locationlocation, Player player) throws InvalidOrderExeption {
         if (!order.isAvailable()) throw new InvalidOrderExeption();
-        if (location.getOwner() != player) throw new InvalidOrderExeption();
+        if (area.getOwner() != player) throw new InvalidOrderExeption();
         if (order.hasStar() && (numberOfStar==0)) throw new InvalidOrderExeption();
-        if (location.getOrder() != null) throw new InvalidOrderExeption();
+        if (area.getOrder() != null) throw new InvalidOrderExeption();
         order.setAvailable(false);
         if(order.hasStar()) numberOfStar--;
-        location.setOrder(order);
+       location.setOrder(order);
     }
 
-    public void backOrder(Location location, Player player) throws InvalidOrderExeption {
-        if (location.getOwner() != player) throw new InvalidOrderExeption();
-        if (location.getOrder() != null) throw new InvalidOrderExeption();
-        if(location.getOrder().hasStar()) numberOfStar++;
-        location.getOrder().setAvailable(true);
-        location.setOrder(null);
+    public void backOrder(Arealocation, Player player) throws InvalidOrderExeption {
+        if (area.getOwner() != player) throw new InvalidOrderExeption();
+        if (area.getOrder() != null) throw new InvalidOrderExeption();
+        if(area.getOrder().hasStar()) numberOfStar++;
+       location.getOrder().setAvailable(true);
+       location.setOrder(null);
     }
 
     public void setNumberOfStar(int numberOfStar) {

@@ -8,7 +8,7 @@ public class House {
     private HouseName houseName;
     private int supplyTrack;
     private int victoryTrack;
-    private LocationList locationList;
+    private AreaList areaList;
     private LeaderList leaderList;
 
     public House(int suppliesTrack, int victoryPath, HouseName name){
@@ -18,19 +18,19 @@ public class House {
     }
 
     public void updateSupplyTrack(){
-        supplyTrack = locationList.getSupplies();
+        supplyTrack = areaList.getSupplies();
     }
 
     public void updateVictoryTrack() throws VictoryException {
-        victoryTrack = locationList.getVictory();
+        victoryTrack = areaList.getVictory();
     }
 
     public HouseName getHouseName() {
         return houseName;
     }
 
-    public LocationList getLocationList() {
-        return locationList;
+    public AreaList getAreaList() {
+        return areaList;
     }
 
     public LeaderList getLeaderList() {
