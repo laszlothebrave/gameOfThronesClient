@@ -24,16 +24,20 @@ public class GameData {
     private WildlingCardStack wildlingCardStack;
 
     GameData(int playersNumber){
+        map = new Map(playersNumber);
+        playerList = new PlayerList(playersNumber);
+
         roundCounter = 1;
         wildlingsCounter = 0;
+
         throneTrack = new ThroneTrack(playersNumber);
         swordTrack = new SwordTrack(playersNumber);
         ravenTrack = new RavenTrack(playersNumber);
+
         firstWesterosCardStack = new FirstWesterosCardStack();
         secondWesterosCardStack = new SecondWesterosCardStack();
         thirdWesterosCardStack = new ThirdWesterosCardStack();
         wildlingCardStack = new WildlingCardStack();
-        map = new Map(playersNumber);
     }
 
     public void nextRound(){

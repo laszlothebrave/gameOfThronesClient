@@ -1,10 +1,10 @@
 package data_pack;
 
-import map_pack.Area;
-import military_pack.Army;
-import house_pack.House;
-import order_pack.OrderList;
-import wallet_pack.Wallet;
+import data_pack.map_pack.Area;
+import data_pack.military_pack.Army;
+import data_pack.house_pack.House;
+import data_pack.order_pack.OrderList;
+import data_pack.wallet_pack.Wallet;
 
 public class Player {
     private PlayerName playerName;
