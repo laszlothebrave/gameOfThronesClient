@@ -3,15 +3,15 @@ package map_pack;
 public class Land extends Location {
     private boolean isCapital;
     private int supplies;
-    private int crown;
+    private int areaGold;
     private int castleStrength;
     private boolean isMark;
 
-    Land(LocationName locationName, int supplice, int crown, int castleStrength) {
+    Land(LocationName locationName, int supplice, int areaGold, int castleStrength) {
         super(locationName);
         this.isCapital = false;
         this.supplies = supplice;
-        this.crown = crown;
+        this.areaGold = areaGold;
         this.isMark = false;
     }
 
@@ -19,7 +19,7 @@ public class Land extends Location {
         return supplies;
     }
 
-    public int getVictory(){
-            return 1;
+    public boolean hasVictoryPoint(){
+            return (castleStrength>0);
     }
 }

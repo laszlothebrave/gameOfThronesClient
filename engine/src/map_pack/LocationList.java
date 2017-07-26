@@ -25,7 +25,7 @@ public class LocationList {
     public int getVictory() throws VictoryException {
         int result = 0;
         for (Map.Entry<LocationName, Location> entry : locationHashMap.entrySet()){
-            result += entry.getValue().getVictory();
+            result += entry.getValue().hasVictoryPoint();
         }
         if (result >= 7) throw new VictoryException(locationTab[1].getOwner());
         return result;

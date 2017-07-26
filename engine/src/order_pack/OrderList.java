@@ -30,7 +30,7 @@ public class OrderList {
         orderList.add(new Support(true, 0));
     }
 
-    public void giveOrder(Order order, Location location, Player player) throws InvalidOrderExeption {
+    public void placeOrder(Order order, Location location, Player player) throws InvalidOrderExeption {
         if (!order.isAvailable()) throw new InvalidOrderExeption();
         if (location.getOwner() != player) throw new InvalidOrderExeption();
         if (order.hasStar() && (numberOfStar==0)) throw new InvalidOrderExeption();
@@ -40,7 +40,7 @@ public class OrderList {
         location.setOrder(order);
     }
 
-    public void backOrder(Location location, Player player) throws InvalidOrderExeption {
+    public void removeOrder(Location location, Player player) throws InvalidOrderExeption {
         if (location.getOwner() != player) throw new InvalidOrderExeption();
         if (location.getOrder() != null) throw new InvalidOrderExeption();
         if(location.getOrder().hasStar()) numberOfStar++;

@@ -9,7 +9,7 @@ public class Sea extends Location {
         return 0;
     }
 
-    public int getVictory(){
-        return 0;
+    public boolean hasVictoryPoint(){
+        return false;
     }
 }

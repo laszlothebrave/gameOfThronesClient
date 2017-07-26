@@ -1,9 +1,11 @@
 package military_pack;
 
-public class Leader {
+public abstract class Leader {
     private int Strength;
-    public void execute(){}
-    Leader(int Strength){
+
+    public Leader(int Strength){
         this.Strength = Strength;
     }
+
+    public abstract void resolve();
 }

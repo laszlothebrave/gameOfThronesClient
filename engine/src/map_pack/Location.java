@@ -9,17 +9,9 @@ public abstract class Location {
     Player owner;
     Army army;
     Army selectedArmy;
-
-    public Army getSelectedArmy() {
-        return selectedArmy;
-    }
-
-    public Army getRoutedArmy() {
-        return routedArmy;
-    }
-
     Army routedArmy;
     Order order;
+
     Location(LocationName locationName){
         this.locationName = locationName;
         owner = null;
@@ -28,6 +20,8 @@ public abstract class Location {
         routedArmy = new Army(0, 0, 0, 0);
         order = null;
     }
+
+
 
     public void setOwner(Player owner) {
         this.owner = owner;
@@ -57,6 +51,15 @@ public abstract class Location {
         return order;
     }
 
+    public Army getSelectedArmy() {
+        return selectedArmy;
+    }
+
+    public Army getRoutedArmy() {
+        return routedArmy;
+    }
+
+
     public abstract int getSupplies();
-    public abstract int getVictory();
+    public abstract boolean hasVictoryPoint();
 }

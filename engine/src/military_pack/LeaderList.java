@@ -1,8 +1,10 @@
 package military_pack;
 
+import java.util.ArrayList;
+
 public class LeaderList {
-    public Leader availableLeaders[];
-    public Leader notAvailableLeaders[];
+    public ArrayList<Leader> availableLeader;
+    public ArrayList<Leader> notAvailableLeader;
 
     LeaderList(){
 

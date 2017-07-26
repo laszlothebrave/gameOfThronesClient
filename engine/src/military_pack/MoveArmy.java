@@ -4,8 +4,8 @@ import exception_pack.NotEnoughSoldierExeption;
 import main_pack.Player;
 import map_pack.Location;
 
-public class MoveCorp {
-    public static void orderOfMarch(Location start, Location Stop){
+public class MoveArmy {
+    public static void marchOrder(Location start, Location Stop){
 
     }
 
@@ -13,7 +13,7 @@ public class MoveCorp {
 
     }
 
-    public static void retreatAtacker(Location location){
+    public static void retreatAttacker(Location location){
         try {
             location.getSelectedArmy().substractSoldier(0, 0, 0, location.getSelectedArmy().getTower());
         } catch (NotEnoughSoldierExeption e) {
@@ -22,7 +22,7 @@ public class MoveCorp {
         move(location.getSelectedArmy(), location.getRoutedArmy());
     }
 
-    private static void atack(){
+    private static void attack(){
 
     }
 
