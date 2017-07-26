@@ -12,7 +12,7 @@ public class Room implements Runnable{
         try {
             queue.put(queue.take() + " checked");
         } catch (InterruptedException e){
-//xxxxxs
+//xxxxxsd
         }
     }
 }
