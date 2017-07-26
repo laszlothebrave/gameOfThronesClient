@@ -5,25 +5,35 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class NetworkExample implements Runnable {
 
     private Scanner in;
-    LinkedBlockingQueue queue;
+    LinkedBlockingQueue networkToSuperior;
+    LinkedBlockingQueue superiorToNetwork;
 
-
-    public NetworkExample(LinkedBlockingQueue queue){
+    public NetworkExample(LinkedBlockingQueue superiorToNetwork, LinkedBlockingQueue networkToSuperior){
         in = new Scanner(System.in);
-        this.queue = queue;
+        this.networkToSuperior = networkToSuperior;
+        this.superiorToNetwork = superiorToNetwork;
     }
 
     @Override
     public void run(){
         while (true) {
-            getMessage();
+            sendMessage();
+            receiveMessage();
         }
     }
 
-    private void getMessage() {
+    private void receiveMessage() {
+        try {
+            System.out.print(superiorToNetwork.take() + " - message received by network form superior\n");
+        } catch (InterruptedException e){
+
+        }
+    }
+
+    private void sendMessage() {
         String a = in.nextLine();
         try {
-            queue.put(a);
+            networkToSuperior.put(a + " - message send by network to superior\n");
         }catch (InterruptedException e){
 
         }

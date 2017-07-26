@@ -9,15 +9,6 @@ public abstract class Area {
     Player owner;
     Army army;
     Army selectedArmy;
-
-    public Army getSelectedArmy() {
-        return selectedArmy;
-    }
-
-    public Army getRoutedArmy() {
-        return routedArmy;
-    }
-
     Army routedArmy;
     Order order;
 
