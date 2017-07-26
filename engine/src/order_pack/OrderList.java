@@ -3,7 +3,7 @@ package order_pack;
 import exception_pack.InvalidOrderExeption;
 import main_pack.Player;
 import main_pack.PlayerName;
-import map_pack.Location;
+import map_pack.Area;
 
 import java.util.ArrayList;
 
