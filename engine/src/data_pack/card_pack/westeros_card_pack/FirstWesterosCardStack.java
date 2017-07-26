@@ -1,7 +1,7 @@
 package data_pack.card_pack.westeros_card_pack;
 
 public class FirstWesterosCardStack extends WesterosCardStack {
-    FirstWesterosCardStack(){
+    public FirstWesterosCardStack(){
         super();
         cards[0] = new WinterIsComing();
         cards[1] = new WinterIsComing();
@@ -13,5 +13,6 @@ public class FirstWesterosCardStack extends WesterosCardStack {
         cards[7] = new WinterIsComing();
         cards[8] = new WinterIsComing();
         cards[9] = new WinterIsComing();
+        shuffle();
     }
 }

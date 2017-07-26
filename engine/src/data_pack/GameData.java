@@ -1,22 +1,27 @@
 package data_pack;
 
 import data_pack.card_pack.westeros_card_pack.*;
+import data_pack.card_pack.wildling_card_pack.*;
 import data_pack.map_pack.*;
 import data_pack.track_pack.*;
 import data_pack.card_pack.*;
 
 public class GameData {
 
+    private Map map;
+    private PlayerList playerList;
+
     private int roundCounter;
     private int wildlingsCounter;
+
     private ThroneTrack throneTrack;
     private SwordTrack swordTrack;
     private RavenTrack ravenTrack;
+
     private FirstWesterosCardStack firstWesterosCardStack;
     private SecondWesterosCardStack secondWesterosCardStack;
     private ThirdWesterosCardStack thirdWesterosCardStack;
-    private CardStack wildlingCardStack;
-    private Map map;
+    private WildlingCardStack wildlingCardStack;
 
     GameData(int playersNumber){
         roundCounter = 1;
