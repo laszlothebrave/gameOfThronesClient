@@ -30,22 +30,22 @@ public class OrderList {
         orderList.add(new Support(true, 0));
     }
 
-    public void placeOrder(Order order, Location location, Player player) throws InvalidOrderExeption {
+    public void placeOrder(Order order, Area area, Player player) throws InvalidOrderExeption {
         if (!order.isAvailable()) throw new InvalidOrderExeption();
-        if (location.getOwner() != player) throw new InvalidOrderExeption();
+        if (area.getOwner() != player) throw new InvalidOrderExeption();
         if (order.hasStar() && (numberOfStar==0)) throw new InvalidOrderExeption();
-        if (location.getOrder() != null) throw new InvalidOrderExeption();
+        if (area.getOrder() != null) throw new InvalidOrderExeption();
         order.setAvailable(false);
         if(order.hasStar()) numberOfStar--;
-        location.setOrder(order);
+        area.setOrder(order);
     }
 
-    public void removeOrder(Location location, Player player) throws InvalidOrderExeption {
-        if (location.getOwner() != player) throw new InvalidOrderExeption();
-        if (location.getOrder() != null) throw new InvalidOrderExeption();
-        if(location.getOrder().hasStar()) numberOfStar++;
-        location.getOrder().setAvailable(true);
-        location.setOrder(null);
+    public void removeOrder(Area area, Player player) throws InvalidOrderExeption {
+        if (area.getOwner() != player) throw new InvalidOrderExeption();
+        if (area.getOrder() != null) throw new InvalidOrderExeption();
+        if(area.getOrder().hasStar()) numberOfStar++;
+        area.getOrder().setAvailable(true);
+        area.setOrder(null);
     }
 
     public void setNumberOfStar(int numberOfStar) {
