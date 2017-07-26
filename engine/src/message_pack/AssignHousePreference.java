@@ -1,16 +1,15 @@
 package message_pack;
 
-import house_pack.House;
 import house_pack.HouseName;
 import main_pack.PlayerName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SelectHousePreference extends Message implements Serializable{
+public class AssignHousePreference extends Message implements Serializable{
     public ArrayList<HouseName> HousePreferenceList;
 
-    SelectHousePreference(PlayerName player) {
+    AssignHousePreference(PlayerName player) {
         super(player);
         HousePreferenceList = new ArrayList <HouseName>();
     }

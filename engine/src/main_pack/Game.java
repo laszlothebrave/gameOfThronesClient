@@ -8,9 +8,9 @@ public class Game implements Runnable{
     public LinkedBlockingQueue queue;
     public int roundCounter;
     public int wildlingsCounter;
-    public Player thronePath[];
-    public Player swordPath[];
-    public Player ravenPath[];
+    public Player throneTrack[];
+    public Player swordTrack[];
+    public Player ravenTrack[];
     public Map map;
 
     public Game(int playersNumber, LinkedBlockingQueue queue){
@@ -18,7 +18,7 @@ public class Game implements Runnable{
         initialize(playersNumber);
     }
 
-    private void initialize(int playersNumber) {
+    private void initialize(int playersNumber){
         switch(playersNumber) {
             case 3: initializeFor3(); break;
             case 4: initializeFor4(); break;
@@ -45,7 +45,6 @@ public class Game implements Runnable{
     @Override
     public void run() {
         while(true) {
-
             checkmessage();
         }
     }

@@ -1,22 +1,22 @@
 package military_pack;
 
-import exception_pack.NotEnoughSoldierExeption;
+import exception_pack.UnitTypeLimitReachedException;
 import main_pack.Player;
-import map_pack.Location;
+import map_pack.Area;
 
 public class MoveArmy {
-    public static void marchOrder(Location start, Location Stop){
+    public static void marchOrder(Area start, Area Stop){
 
     }
 
-    public static void retreatDefender(Location start, Player player){
+    public static void retreatDefender(Area start, Player player){
 
     }
 
-    public static void retreatAttacker(Location location){
+    public static void retreatAttacker(Area location){
         try {
-            location.getSelectedArmy().substractSoldier(0, 0, 0, location.getSelectedArmy().getTower());
-        } catch (NotEnoughSoldierExeption e) {
+            location.getSelectedArmy().removeSoldier(0, 0, 0, location.getSelectedArmy().getTower());
+        } catch (UnitTypeLimitReachedException e) {
 
         }
         move(location.getSelectedArmy(), location.getRoutedArmy());

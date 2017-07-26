@@ -1,6 +1,6 @@
 package main_pack;
 
-import map_pack.Location;
+import map_pack.Area;
 import military_pack.Army;
 import house_pack.House;
 import order_pack.OrderList;
@@ -41,8 +41,8 @@ public class Player {
         return house;
     }
 
-    public void addLocation(Location location){
-        house.getLocationList().addLocation(location, this);
+    public void addArea(Area area){
+        house.getAreaList().addArea(area, this);
 
     }
 }

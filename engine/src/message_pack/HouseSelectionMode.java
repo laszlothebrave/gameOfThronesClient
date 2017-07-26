@@ -1,6 +1,6 @@
 package message_pack;
 
-public enum ChooseMode {
+public enum HouseSelectionMode {
     RANDOM,
     PREFERENCES
 }

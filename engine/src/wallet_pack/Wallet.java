@@ -13,24 +13,24 @@ public class Wallet {
         bankGold = MAX_GOLD - INITIAL_GOLD;
     }
 
-    public void addGold(int amount) throws NoBankGoldExeption {
+    public void addGold(int amount) throws NoBankGoldException {
         if (!hasBank(amount)) {
             playerGold += bankGold;
             bankGold = 0;
-            throw new NoBankGoldExeption();
+            throw new NoBankGoldException();
         }
         playerGold += amount;
         bankGold -= amount;
     }
 
-    public void substractGold(int amount) throws NoPlayerGoldExeption {
-        if(!hasPlayer(amount)) throw new NoPlayerGoldExeption();
+    public void removeGold(int amount) throws NoPlayerGoldException {
+        if(!hasPlayer(amount)) throw new NoPlayerGoldException();
         playerGold -= amount;
         bankGold += amount;
     }
 
-    public void putOneOnMap() throws NoPlayerGoldExeption {
-        if (!hasPlayer(1)) throw new NoPlayerGoldExeption();
+    public void putOneOnMap() throws NoPlayerGoldException {
+        if (!hasPlayer(1)) throw new NoPlayerGoldException();
         playerGold--;
     }
 

@@ -1,8 +1,8 @@
 package order_pack;
 
-public class GetTaxes extends Order {
+public class March extends Order {
 
-    public GetTaxes(boolean Star, int Modifier) {
+    public March(boolean Star, int Modifier) {
         super(Star, Modifier);
     }
 

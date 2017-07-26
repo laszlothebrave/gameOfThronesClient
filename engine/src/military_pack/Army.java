@@ -1,6 +1,6 @@
 package military_pack;
 
-import exception_pack.NotEnoughSoldierExeption;
+import exception_pack.UnitTypeLimitReachedException;
 
 public class Army {
     private int Infantry;
@@ -22,7 +22,7 @@ public class Army {
         this.Tower += Tower;
     }
 
-    public void substractSoldier (int Infantry, int Cavalry, int Ship, int Tower) throws NotEnoughSoldierExeption {
+    public void removeSoldier (int Infantry, int Cavalry, int Ship, int Tower) throws UnitTypeLimitReachedException {
         isAvailable(Infantry, Cavalry, Ship, Tower);
         this.Infantry -= Infantry;
         this.Cavalry -= Cavalry;
@@ -30,11 +30,11 @@ public class Army {
         this.Tower -= Tower;
     }
 
-    public void isAvailable(int Infantry, int Cavalry, int Ship, int Tower) throws NotEnoughSoldierExeption {
-        if (this.Infantry < Infantry) throw new NotEnoughSoldierExeption();
-        if (this.Cavalry < Cavalry) throw new NotEnoughSoldierExeption();
-        if (this.Ship < Ship) throw new NotEnoughSoldierExeption();
-        if (this.Tower < Tower) throw new NotEnoughSoldierExeption();
+    public void isAvailable(int Infantry, int Cavalry, int Ship, int Tower) throws UnitTypeLimitReachedException {
+        if (this.Infantry < Infantry) throw new UnitTypeLimitReachedException();
+        if (this.Cavalry < Cavalry) throw new UnitTypeLimitReachedException();
+        if (this.Ship < Ship) throw new UnitTypeLimitReachedException();
+        if (this.Tower < Tower) throw new UnitTypeLimitReachedException();
     }
 
     public int getInfantry() { return Infantry; }
