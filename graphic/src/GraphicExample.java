@@ -1,8 +1,8 @@
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class GraphicExemple implements Runnable{
+public class GraphicExample implements Runnable{
     LinkedBlockingQueue queue;
-    public GraphicExemple(LinkedBlockingQueue queue) {
+    public GraphicExample(LinkedBlockingQueue queue) {
         this.queue = queue;
     }
 

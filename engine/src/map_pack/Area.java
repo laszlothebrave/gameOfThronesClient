@@ -20,6 +20,7 @@ public abstract class Area {
 
     Army routedArmy;
     Order order;
+
     Area(AreaName areaName){
         this.areaName = areaName;
         owner = null;
@@ -58,5 +59,5 @@ public abstract class Area {
     }
 
     public abstract int getSupplies();
-    public abstract int getVictory();
+    public abstract boolean hasVictoryPoint();
 }

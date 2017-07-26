@@ -4,7 +4,7 @@ import exception_pack.VictoryException;
 import map_pack.*;
 import military_pack.LeaderList;
 
-public class House {
+public abstract class House {
     private HouseName houseName;
     private int supplyTrack;
     private int victoryTrack;

@@ -16,7 +16,6 @@ public class Game implements Runnable{
     public Game(int playersNumber, LinkedBlockingQueue queue){
         this.queue = queue;
         initialize(playersNumber);
-
     }
 
     private void initialize(int playersNumber){

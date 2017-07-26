@@ -25,5 +25,5 @@ public abstract class Order {
         isAvailable = available;
     }
 
-    abstract void execute();
+    abstract void resolve();
 }

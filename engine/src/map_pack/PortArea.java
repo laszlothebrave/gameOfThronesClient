@@ -5,11 +5,9 @@ public class PortArea extends  Area {
         super(areaName);
     }
 
-    public int getSupplies(){
+    public int getSupplies() {
         return 0;
     }
 
-    public int getVictory(){
-        return 0;
-    }
+    public boolean hasVictoryPoint() { return false; }
 }

@@ -6,7 +6,7 @@ public class Defense extends Order {
         super(Star, Modifier);
     }
 
-    public void execute(){
+    public void resolve(){
 
     }
 }

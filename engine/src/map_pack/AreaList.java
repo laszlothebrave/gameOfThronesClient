@@ -25,7 +25,7 @@ public class AreaList {
     public int getVictory() throws VictoryException {
         int result = 0;
         for (Map.Entry<AreaName, Area> entry : areaHashMap.entrySet()){
-            result += entry.getValue().getVictory();
+            if(entry.getValue().hasVictoryPoint()) result += 1;
         }
         if (result >= 7) throw new VictoryException(areaTab[1].getOwner());
         return result;

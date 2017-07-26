@@ -3,17 +3,17 @@ package map_pack;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class NeighbourInitialization {
+public class AdjacencyInitialization {
 
-    private static HashMap<Area, ArrayList<Area>> neighbourHashMap;
+    private static HashMap<Area, ArrayList<Area>> adjacencyHashMap;
     private static HashMap<AreaName,Area> areaHashMap;
 
     public static HashMap<Area,ArrayList <Area>> create(int numberOfPlayer, HashMap<AreaName,Area> areaHashMapOrginal){
         areaHashMap = areaHashMapOrginal;
-        neighbourHashMap = new HashMap<>();
+        adjacencyHashMap = new HashMap<>();
         add(AreaName.winterfell, new AreaName[] {AreaName.portWinterfell});
 
-        return neighbourHashMap;
+        return adjacencyHashMap;
     }
 
     private static void add(AreaName key, AreaName[] neighbourTab){
@@ -21,6 +21,6 @@ public class NeighbourInitialization {
         for (AreaName neighbour : neighbourTab) {
             areaArrayList.add(areaHashMap.get(neighbour));
         }
-        neighbourHashMap.put(areaHashMap.get(key), areaArrayList);
+        adjacencyHashMap.put(areaHashMap.get(key), areaArrayList);
     }
 }
