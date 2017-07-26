@@ -11,9 +11,9 @@ public class House {
     private AreaList areaList;
     private LeaderList leaderList;
 
-    public House(int suppliesTrack, int victoryPath, HouseName name){
+    public House(int suppliesTrack, int victoryTrack, HouseName name){
         this.supplyTrack = suppliesTrack;
-        this.victoryTrack = victoryPath;
+        this.victoryTrack = victoryTrack;
         this.houseName = name;
     }
 

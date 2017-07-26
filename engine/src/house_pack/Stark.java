@@ -1,8 +1,8 @@
 package house_pack;
 
 public class Stark extends House{
-    public Stark(int suppliesPath, int victoryPath, HouseName name) {
-        super(suppliesPath, victoryPath, name);
+    public Stark(int suppliesTrack, int victoryTrack, HouseName name) {
+        super(suppliesTrack, victoryTrack, name);
 
     }
 }

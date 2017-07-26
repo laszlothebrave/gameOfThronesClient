@@ -1,7 +1,7 @@
 package card_pack;
 
 public class WesterosCard implements Card {
-    public boolean hasWildlingMark;
+    public boolean hasWildlingIcon;
     public void execute(){ }
     public WesterosCard(){ }
 }

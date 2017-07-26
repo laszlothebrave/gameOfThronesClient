@@ -8,9 +8,9 @@ public class Game implements Runnable{
     public LinkedBlockingQueue queue;
     public int roundCounter;
     public int wildlingsCounter;
-    public Player thronePath[];
-    public Player swordPath[];
-    public Player ravenPath[];
+    public Player throneTrack[];
+    public Player swordTrack[];
+    public Player ravenTrack[];
     public Map map;
 
     public Game(int playersNumber, LinkedBlockingQueue queue){
