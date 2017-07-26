@@ -32,8 +32,8 @@ public class NetworkExample implements Runnable {
     }
 
     private void sendMessage() {
-        String a = in.nextLine();
-        CreateRoomMessage createRoomMessage = new CreateRoomMessage("Room number 1");
+        String message = in.nextLine();
+        CreateRoomMessage createRoomMessage = new CreateRoomMessage(message);
         try {
             networkToSuperior.put(createRoomMessage);
         }catch (InterruptedException e){

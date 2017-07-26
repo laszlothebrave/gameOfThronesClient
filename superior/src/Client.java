@@ -1,11 +1,13 @@
+import message_pack.CreateRoomMessage;
+
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Server {
+public class Client {
     LinkedBlockingQueue superiorToNetwork;
     LinkedBlockingQueue networkToSuperior;
 
 
-    public Server() {
+    public Client() {
         superiorToNetwork = new LinkedBlockingQueue(1);
         networkToSuperior = new LinkedBlockingQueue(1);
     }
@@ -15,6 +17,11 @@ public class Server {
         listenToNetwork();
     }
 
+    private void createNetwork(){
+        NetworkExample networkExample = new NetworkExample(superiorToNetwork, networkToSuperior);
+        new Thread(networkExample).start();
+    }
+
     private void listenToNetwork(){
         while (true){
             receiveMessage();
@@ -22,15 +29,10 @@ public class Server {
         }
     }
 
-    private void createNetwork(){
-        NetworkExample networkExample = new NetworkExample(superiorToNetwork, networkToSuperior);
-        new Thread(networkExample).start();
-    }
-
     private void receiveMessage() {
         try {
-            Object message = networkToSuperior.take();
-            System.out.print( message.toString() + " - message received by superior form network\n");
+            CreateRoomMessage message = (CreateRoomMessage)networkToSuperior.take();
+            System.out.print( message.getRoomName() + " - message received by superior form network\n");
             interpretMessage(message);
         } catch (InterruptedException e){
 
