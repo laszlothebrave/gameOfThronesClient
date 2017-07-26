@@ -1,11 +1,11 @@
 package military_pack;
 
-import card_pack.Card;
-
-public abstract class Leader implements Card {
+public abstract class Leader {
     private int Strength;
-    public void resolve(){}
-    Leader(int Strength){
+
+    public Leader(int Strength){
         this.Strength = Strength;
     }
+
+    public abstract void resolve();
 }

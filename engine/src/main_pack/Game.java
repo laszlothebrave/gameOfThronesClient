@@ -28,7 +28,6 @@ public class Game implements Runnable{
     }
 
     private void initializeFor3() {
-
     }
 
     private void initializeFor4() {

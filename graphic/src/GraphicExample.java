@@ -11,6 +11,7 @@ public class GraphicExample implements Runnable{
         while(true) {
             printmessage();
         }
+        //System.out.print("\n");
     }
 
     private void printmessage() {

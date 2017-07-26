@@ -13,13 +13,13 @@ public class MoveArmy {
 
     }
 
-    public static void retreatAttacker(Area area){
+    public static void retreatAttacker(Area location){
         try {
-            area.getSelectedArmy().removeSoldier(0, 0, 0, area.getSelectedArmy().getTower());
+            location.getSelectedArmy().removeSoldier(0, 0, 0, location.getSelectedArmy().getTower());
         } catch (UnitTypeLimitReachedException e) {
 
         }
-        move(area.getSelectedArmy(), area.getRoutedArmy());
+        move(location.getSelectedArmy(), location.getRoutedArmy());
     }
 
     private static void attack(){

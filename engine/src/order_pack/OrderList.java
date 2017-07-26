@@ -2,7 +2,6 @@ package order_pack;
 
 import exception_pack.InvalidOrderException;
 import main_pack.Player;
-import main_pack.PlayerName;
 import map_pack.Area;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ public class OrderList {
     private int numberOfStar;
 
     public OrderList(){
-        orderList = new ArrayList <>();
+        orderList = new ArrayList<Order>();
         orderList.add(new March(false, -1));
         orderList.add(new March(false, 0));
         orderList.add(new March(true, 1));
@@ -30,7 +29,7 @@ public class OrderList {
         orderList.add(new Support(true, 0));
     }
 
-    public void putOrder(Order order, Area area, Player player) throws InvalidOrderException {
+    public void placeOrder(Order order, Area area, Player player) throws InvalidOrderException {
         if (!order.isAvailable()) throw new InvalidOrderException();
         if (area.getOwner() != player) throw new InvalidOrderException();
         if (order.hasStar() && (numberOfStar==0)) throw new InvalidOrderException();
@@ -40,7 +39,7 @@ public class OrderList {
         area.setOrder(order);
     }
 
-    public void takeOrder(Area area, Player player) throws InvalidOrderException {
+    public void removeOrder(Area area, Player player) throws InvalidOrderException {
         if (area.getOwner() != player) throw new InvalidOrderException();
         if (area.getOrder() != null) throw new InvalidOrderException();
         if(area.getOrder().hasStar()) numberOfStar++;
