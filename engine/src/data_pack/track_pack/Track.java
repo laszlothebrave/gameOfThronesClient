@@ -1,5 +1,7 @@
 package data_pack.track_pack;
 
+import data_pack.Player;
+
 public abstract class Track{
     private Player track[];
 
@@ -7,9 +9,7 @@ public abstract class Track{
         track = new Player[playersNumber];
     }
 
-    public void bid(){
+    public void bid(){ }
 
-    }
-
-    public Track getTrack(){ return track }
+    public Player getFirst(){ return track[0]; }
 }

@@ -1,39 +1,24 @@
 package data_pack;
 
+import data_pack.map_pack.*;
+import data_pack.track_pack.*;
+
 public class GameData {
 
     public int roundCounter;
     public int wildlingsCounter;
-    public Track throneTrack[];
-    public Track swordTrack[];
-    public Track ravenTrack[];
+    public ThroneTrack throneTrack;
+    public SwordTrack swordTrack;
+    public RavenTrack ravenTrack;
     public Map map;
 
     GameData(int playersNumber){
         roundCounter = 1;
         wildlingsCounter = 0;
-        initialize(playersNumber);
-    }
-
-    private void initialize(int playersNumber){
-    switch(playersNumber) {
-        case 3: initializeFor3(); break;
-        case 4: initializeFor4(); break;
-        case 5: initializeFor5(); break;
-        case 6: initializeFor6(); break;
-    }
-}
-
-    private void initializeFor3() {
-    }
-
-    private void initializeFor4() {
-    }
-
-    private void initializeFor5() {
-    }
-
-    private void initializeFor6() {
+        throneTrack = new ThroneTrack(playersNumber);
+        swordTrack = new SwordTrack(playersNumber);
+        ravenTrack = new RavenTrack(playersNumber);
+        map = new Map(playersNumber);
     }
 
     void nextRound(){

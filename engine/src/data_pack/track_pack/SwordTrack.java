@@ -1,8 +1,8 @@
 package data_pack.track_pack;
 
-public class ThroneTrack extends Track{
+public class SwordTrack extends Track{
 
-    public ThroneTrack(int playersNumber){
+    public SwordTrack(int playersNumber){
         super(playersNumber);
         switch(playersNumber){
             case 3: break;
