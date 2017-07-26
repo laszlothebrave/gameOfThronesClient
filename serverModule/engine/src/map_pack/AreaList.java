@@ -27,28 +27,27 @@ public class AreaList {
         for (Map.Entry<AreaName, Area> entry : areaHashMap.entrySet()){
             if(entry.getValue().hasVictoryPoint()) result += 1;
         }
-        if (result >= 7) throw new VictoryException(areaTab[1].getOwner());
+        if (result >= 7) throw new VictoryException(areaHashMap.get(1).getOwner());
         return result;
     }
 
     public void addArea(Area area, Player newOwner){
         area.setOwner(newOwner);
-        areaTab[numberOfArea] = area;
-        numberOfArea++;
+       // areaHashMap.put
     }
 
     public void removeArea(Area area) throws AreaNotFoundException{
         int position = findArea(area);
-        numberOfArea--;
-        areaTab[position] = areaTab[numberOfArea];
+        //numberOfArea--;
+        //areaTab[position] = areaTab[numberOfArea];
     }
 
     private int findArea(Area area) throws AreaNotFoundException{
         int position = 0;
-        for (Area tmp : areaTab){
+        /*for (Area tmp : areaTab){
             if (tmp == area) return position;
             position++;
-        }
+        }*/
         throw new AreaNotFoundException(area);
     }
 

@@ -1,4 +1,5 @@
-import java.util.LinkedHashMap;
+import message_pack.CreateRoomMessage;
+
 import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -32,8 +33,9 @@ public class NetworkExample implements Runnable {
 
     private void sendMessage() {
         String a = in.nextLine();
+        CreateRoomMessage createRoomMessage = new CreateRoomMessage("Room number 1");
         try {
-            networkToSuperior.put(a + " - message send by network to superior\n");
+            networkToSuperior.put(createRoomMessage);
         }catch (InterruptedException e){
 
         }

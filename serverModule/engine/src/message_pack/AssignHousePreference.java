@@ -1,6 +1,5 @@
 package message_pack;
 
-import house_pack.House;
 import house_pack.HouseName;
 import main_pack.PlayerName;
 
