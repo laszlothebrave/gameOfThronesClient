@@ -5,12 +5,12 @@ import data_pack.track_pack.*;
 
 public class GameData {
 
-    public int roundCounter;
-    public int wildlingsCounter;
-    public ThroneTrack throneTrack;
-    public SwordTrack swordTrack;
-    public RavenTrack ravenTrack;
-    public Map map;
+    private int roundCounter;
+    private int wildlingsCounter;
+    private ThroneTrack throneTrack;
+    private SwordTrack swordTrack;
+    private RavenTrack ravenTrack;
+    private Map map;
 
     GameData(int playersNumber){
         roundCounter = 1;
