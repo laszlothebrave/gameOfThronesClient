@@ -1,11 +1,11 @@
 package data_pack.card_pack;
 
-public class CardStack {
+public abstract class CardStack {
     private Card cards[];
     private int current = 0;
 
-    public CardStack(){
-
+    public CardStack(int number){
+        cards = new Card[number];
     }
 
     public void shuffle(){}
