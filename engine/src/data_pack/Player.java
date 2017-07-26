@@ -1,4 +1,4 @@
-package main_pack;
+package data_pack;
 
 import map_pack.Area;
 import military_pack.Army;

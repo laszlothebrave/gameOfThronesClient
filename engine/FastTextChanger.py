@@ -1,9 +1,9 @@
 import os
 import re
 
-firstTextToReplace = "execute"
-firstReplacingText = "resolve"
-secondTextToReplace = "crown"
+firstTextToReplace = "_pack"
+firstReplacingText = ""
+secondTextToReplace = "areaGold"
 secondReplacingText = "areaGold"
 
 if not os.access("./FTCbackupFiles", os.F_OK):

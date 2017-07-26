@@ -1,4 +1,4 @@
-package main_pack;
+package data_pack;
 
 public class PlayerName {
     private String name;

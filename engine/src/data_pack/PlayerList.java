@@ -1,4 +1,4 @@
-package main_pack;
+package data_pack;
 
 public class PlayerList {
 
