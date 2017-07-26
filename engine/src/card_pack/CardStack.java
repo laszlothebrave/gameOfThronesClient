@@ -9,6 +9,6 @@ public class CardStack {
     }
 
     public void shuffle(){}
-    public Card resolve(){ return cards[current]; }
+    public Card reveal(){ return cards[current]; }
     public void refresh(){}
 }
