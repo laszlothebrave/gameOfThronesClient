@@ -1,5 +1,6 @@
 package data_pack.house_pack;
 
+import data_pack.Player;
 import exception_pack.VictoryException;
 import data_pack.map_pack.*;
 import data_pack.military_pack.LeaderList;

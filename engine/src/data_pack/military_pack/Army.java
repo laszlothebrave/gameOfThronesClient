@@ -30,7 +30,7 @@ public class Army {
         this.Tower -= Tower;
     }
 
-    public void isAvailable(int Infantry, int Cavalry, int Ship, int Tower) throws UnitTypeLimitReachedException {
+    private void isAvailable(int Infantry, int Cavalry, int Ship, int Tower) throws UnitTypeLimitReachedException {
         if (this.Infantry < Infantry) throw new UnitTypeLimitReachedException();
         if (this.Cavalry < Cavalry) throw new UnitTypeLimitReachedException();
         if (this.Ship < Ship) throw new UnitTypeLimitReachedException();
@@ -40,7 +40,5 @@ public class Army {
     public int getInfantry() { return Infantry; }
     public int getCavalry() { return Cavalry; }
     public int getShip() { return Ship; }
-    public int getTower() {
-        return Tower;
-    }
+    public int getTower() { return Tower; }
 }

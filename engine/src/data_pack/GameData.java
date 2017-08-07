@@ -6,6 +6,8 @@ import data_pack.map_pack.*;
 import data_pack.track_pack.*;
 import data_pack.card_pack.*;
 
+import java.util.ArrayList;
+
 public class GameData {
 
     private Map map;
@@ -23,16 +25,16 @@ public class GameData {
     private ThirdWesterosCardStack thirdWesterosCardStack;
     private WildlingCardStack wildlingCardStack;
 
-    GameData(int playersNumber){
-        map = new Map(playersNumber);
-        playerList = new PlayerList(playersNumber);
+    public GameData(ArrayList<PlayerName> playersList){
+        map = new Map(playersList.size());
+        playerList = new PlayerList(playersList);
 
         roundCounter = 1;
         wildlingsCounter = 0;
 
-        throneTrack = new ThroneTrack(playersNumber);
-        swordTrack = new SwordTrack(playersNumber);
-        ravenTrack = new RavenTrack(playersNumber);
+        throneTrack = new ThroneTrack(playersList.size());
+        swordTrack = new SwordTrack(playersList.size());
+        ravenTrack = new RavenTrack(playersList.size());
 
         firstWesterosCardStack = new FirstWesterosCardStack();
         secondWesterosCardStack = new SecondWesterosCardStack();

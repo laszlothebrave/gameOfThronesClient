@@ -12,4 +12,5 @@ public class Map {
         neighbourHashMap = AdjacencyInitialization.create(numberOfPlayer, areaList.getAreaHashMap());
     }
 
+
 }

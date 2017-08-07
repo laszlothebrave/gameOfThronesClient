@@ -25,10 +25,6 @@ public abstract class Area {
         this.owner = owner;
     }
 
-    public void setArmy(Army army) {
-        this.army = army;
-    }
-
     public void setOrder(Order order) {
         this.order = order;
     }

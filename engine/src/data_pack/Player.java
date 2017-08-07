@@ -1,6 +1,8 @@
 package data_pack;
 
+import data_pack.house_pack.HouseName;
 import data_pack.map_pack.Area;
+import data_pack.map_pack.AreaName;
 import data_pack.military_pack.Army;
 import data_pack.house_pack.House;
 import data_pack.order_pack.OrderList;
@@ -41,8 +43,8 @@ public class Player {
         return house;
     }
 
-    public void addArea(Area area){
-        house.getAreaList().addArea(area, this);
+    public void addArea(AreaName areaName){
+        house.getAreaList().addArea(areaName, this);
 
     }
 }

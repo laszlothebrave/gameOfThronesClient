@@ -9,7 +9,7 @@ public abstract class Track{
         track = new Player[playersNumber];
     }
 
-    public void bid(){ }
-
     public Player getFirst(){ return track[0]; }
+
+
 }

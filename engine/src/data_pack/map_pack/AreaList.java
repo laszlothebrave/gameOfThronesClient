@@ -27,12 +27,12 @@ public class AreaList {
         for (Map.Entry<AreaName, Area> entry : areaHashMap.entrySet()){
             if(entry.getValue().hasVictoryPoint()) result += 1;
         }
-        if (result >= 7) throw new VictoryException(areaHashMap.get(1).getOwner());
+        if (result >= 7) throw new VictoryException(areaHashMap.get(1).owner);
         return result;
     }
 
-    public void addArea(Area area, Player newOwner){
-        area.setOwner(newOwner);
+    public void addArea(AreaName areaName, Player newOwner){
+        areaHashMap.get(areaName).setOwner(newOwner);
        // areaHashMap.put
     }
 
