@@ -2,13 +2,15 @@ package main_pack;
 
 import data_pack.GameData;
 
+import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Game implements Runnable{
+public class Engine implements Runnable{
     private GameData gameData;
+    private NetworkExample networkExample;
 
-    public Game(int playersNumber, LinkedBlockingQueue queue){
-        gameData = new GameData(playersNumber);
+    public Engine(NetworkExample networkExample){
+        gameData = new GameData(playersList);
     }
 
     @Override

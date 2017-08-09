@@ -5,7 +5,7 @@ import data_pack.house_pack.HouseName;
 
 public class SwordTrack extends Track{
 
-    public SwordTrack(int playersNumber){
+    public SwordTrack(){
         super();
         track.add(PlayerList.PlayerOfHouse(HouseName.Greyjoy));
         track.add(PlayerList.PlayerOfHouse(HouseName.Tyrell));

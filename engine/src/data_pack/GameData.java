@@ -32,9 +32,9 @@ public class GameData {
         roundCounter = 1;
         wildlingsCounter = 0;
 
-        throneTrack = new ThroneTrack(playersList.size());
-        swordTrack = new SwordTrack(playersList.size());
-        ravenTrack = new RavenTrack(playersList.size());
+        throneTrack = new ThroneTrack();
+        swordTrack = new SwordTrack();
+        ravenTrack = new RavenTrack();
 
         firstWesterosCardStack = new FirstWesterosCardStack();
         secondWesterosCardStack = new SecondWesterosCardStack();

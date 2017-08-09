@@ -5,7 +5,7 @@ import data_pack.house_pack.HouseName;
 
 public class ThroneTrack extends Track{
 
-    public ThroneTrack(int playersNumber){
+    public ThroneTrack(){
         super();
         track.add(PlayerList.PlayerOfHouse(HouseName.Baratheon));
         track.add(PlayerList.PlayerOfHouse(HouseName.Lannister));
