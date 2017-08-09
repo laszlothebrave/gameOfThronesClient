@@ -6,6 +6,7 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Graphic extends JFrame implements ActionListener,
         ListSelectionListener,
@@ -20,7 +21,7 @@ public class Graphic extends JFrame implements ActionListener,
     private JTable dmList = new JTable();
     private JScrollPane dmPane = new JScrollPane(dmList);
     private boolean isFullScreen = false;
-    private Engine engine;
+    private static Engine engine;
 
     public static final int INDEX_WIDTH = 0;
     public static final int INDEX_HEIGHT = 1;
@@ -29,6 +30,7 @@ public class Graphic extends JFrame implements ActionListener,
 
     public void run() {
         System.out.println("Graphic - OK");
+        Graphic.main(new String[1]);
     }
 
 
@@ -158,11 +160,9 @@ public class Graphic extends JFrame implements ActionListener,
     }
 
     public static void main(String[] args) {
-        GraphicsEnvironment env = GraphicsEnvironment.
-                getLocalGraphicsEnvironment();
+        GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice[] devices = env.getScreenDevices();
-        // REMIND : Multi-monitor full-screen mode not yet supported
-        for (int i = 0; i < 1 /* devices.length */; i++) {
+        for (int i = 0; i < 1 ; i++) {
             Graphic test = new Graphic(devices[i]);
             test.initComponents(test.getContentPane());
             test.begin();

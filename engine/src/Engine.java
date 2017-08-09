@@ -25,4 +25,8 @@ public class Engine implements Runnable{
     public void run() {
             System.out.println("Engine - OK");
     }
+
+    public void sendMessage(){
+
+    }
 }
