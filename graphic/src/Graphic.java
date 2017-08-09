@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -6,8 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DisplayModeTest extends JFrame implements ActionListener,
-        ListSelectionListener {
+public class Graphic extends JFrame implements ActionListener,
+        ListSelectionListener,
+        Runnable {
 
     private boolean waiting = false;
     private GraphicsDevice device;
@@ -18,11 +20,17 @@ public class DisplayModeTest extends JFrame implements ActionListener,
     private JTable dmList = new JTable();
     private JScrollPane dmPane = new JScrollPane(dmList);
     private boolean isFullScreen = false;
+    private Engine engine;
 
     public static final int INDEX_WIDTH = 0;
     public static final int INDEX_HEIGHT = 1;
     public static final int INDEX_BITDEPTH = 2;
     public static final int INDEX_REFRESHRATE = 3;
+
+    public void run() {
+        System.out.println("Graphic - OK");
+    }
+
 
     public static final int[] COLUMN_WIDTHS = new int[] {
             100, 100, 100, 100
@@ -31,7 +39,7 @@ public class DisplayModeTest extends JFrame implements ActionListener,
             "Width", "Height", "Bit Depth", "Refresh Rate"
     };
 
-    public DisplayModeTest(GraphicsDevice device) {
+    public Graphic(GraphicsDevice device) {
         super(device.getDefaultConfiguration());
         this.device = device;
         setTitle("Display Mode Test");
@@ -155,9 +163,13 @@ public class DisplayModeTest extends JFrame implements ActionListener,
         GraphicsDevice[] devices = env.getScreenDevices();
         // REMIND : Multi-monitor full-screen mode not yet supported
         for (int i = 0; i < 1 /* devices.length */; i++) {
-            DisplayModeTest test = new DisplayModeTest(devices[i]);
+            Graphic test = new Graphic(devices[i]);
             test.initComponents(test.getContentPane());
             test.begin();
         }
+    }
+
+    public Graphic (Engine engine) {
+        this.engine = engine;
     }
 }

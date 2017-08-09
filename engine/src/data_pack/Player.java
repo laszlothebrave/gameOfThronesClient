@@ -15,7 +15,7 @@ public class Player {
     private OrderList orderList;
     private House house;
 
-    Player(PlayerName playerName){
+    public Player(PlayerName playerName){
         this.playerName = playerName;
         wallet = new Wallet();
         army = new Army(10, 5, 6, 2);

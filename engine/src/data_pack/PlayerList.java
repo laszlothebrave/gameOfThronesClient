@@ -14,6 +14,7 @@ public class PlayerList {
     }
 
     static public Player PlayerOfHouse (HouseName houseName) {
+        System.out.print(houseName.toString());
         return playerHashMap.get(houseName);
     }
 

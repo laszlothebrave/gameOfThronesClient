@@ -13,11 +13,11 @@ class DisplayModeModel extends DefaultTableModel {
     }
 
     public String getColumnName(int c) {
-        return DisplayModeTest.COLUMN_NAMES[c];
+        return Graphic.COLUMN_NAMES[c];
     }
 
     public int getColumnCount() {
-        return DisplayModeTest.COLUMN_WIDTHS.length;
+        return Graphic.COLUMN_WIDTHS.length;
     }
 
     public boolean isCellEditable(int r, int c) {
@@ -34,11 +34,11 @@ class DisplayModeModel extends DefaultTableModel {
     public Object getValueAt(int rowIndex, int colIndex) {
         DisplayMode dm = modes[rowIndex];
         switch (colIndex) {
-            case DisplayModeTest.INDEX_WIDTH :
+            case Graphic.INDEX_WIDTH :
                 return Integer.toString(dm.getWidth());
-            case DisplayModeTest.INDEX_HEIGHT :
+            case Graphic.INDEX_HEIGHT :
                 return Integer.toString(dm.getHeight());
-            case DisplayModeTest.INDEX_BITDEPTH : {
+            case Graphic.INDEX_BITDEPTH : {
                 int bitDepth = dm.getBitDepth();
                 String ret;
                 if (bitDepth == DisplayMode.BIT_DEPTH_MULTI) {
@@ -48,7 +48,7 @@ class DisplayModeModel extends DefaultTableModel {
                 }
                 return ret;
             }
-            case DisplayModeTest.INDEX_REFRESHRATE : {
+            case Graphic.INDEX_REFRESHRATE : {
                 int refreshRate = dm.getRefreshRate();
                 String ret;
                 if (refreshRate == DisplayMode.REFRESH_RATE_UNKNOWN) {

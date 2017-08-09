@@ -1,24 +1,24 @@
 import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class NetworkExample implements Runnable {
+public class Network implements Runnable {
 
     private Scanner in;
     LinkedBlockingQueue serverToClinet;
     LinkedBlockingQueue clientToServer;
 
-    public NetworkExample(){
+    public Network(){
        serverToClinet = new LinkedBlockingQueue();
        clientToServer = new LinkedBlockingQueue();
     }
 
     @Override
     public void run(){
-        while (true) {
+            System.out.println("Network - OK");
             receiveMessage();
-        }
     }
 
     private void receiveMessage() {
     }
 }
+
