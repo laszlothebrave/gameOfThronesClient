@@ -34,10 +34,7 @@ public class Wallet {
         playerGold--;
     }
 
-    public void takeOneFromMap() {
-        bankGold++;
-    }
-
+    public void takeOneFromMap() { bankGold++; }
     public int getPlayerGold() {
         return playerGold;
     }

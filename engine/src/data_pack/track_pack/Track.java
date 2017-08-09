@@ -2,14 +2,20 @@ package data_pack.track_pack;
 
 import data_pack.Player;
 
-public abstract class Track{
-    private Player track[];
+import java.util.ArrayList;
+import java.util.Collections;
 
-    public Track(int playersNumber){
-        track = new Player[playersNumber];
+public abstract class Track{
+    protected ArrayList<Player> track;
+
+    protected Track(){
+        track = new ArrayList<Player>();
     }
 
-    public Player getFirst(){ return track[0]; }
+    protected void removeNull() {
+        track.removeAll(Collections.singleton(null));
+    }
 
-
+    public Player getPlayerOnPosition(int position){ return track.get(position); }
+    public void setPlayerOnPosition(int position, Player player){ track.set(position, player); }
 }

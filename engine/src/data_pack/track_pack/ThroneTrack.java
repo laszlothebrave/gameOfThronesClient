@@ -1,15 +1,19 @@
 package data_pack.track_pack;
 
+import data_pack.PlayerList;
+import data_pack.house_pack.HouseName;
+
 public class ThroneTrack extends Track{
 
     public ThroneTrack(int playersNumber){
-        super(playersNumber);
-        switch(playersNumber){
-            case 3: break;
-            case 4: break;
-            case 5: break;
-            case 6: break;
-        }
+        super();
+        track.add(PlayerList.PlayerOfHouse(HouseName.Baratheon));
+        track.add(PlayerList.PlayerOfHouse(HouseName.Lannister));
+        track.add(PlayerList.PlayerOfHouse(HouseName.Stark));
+        track.add(PlayerList.PlayerOfHouse(HouseName.Martell));
+        track.add(PlayerList.PlayerOfHouse(HouseName.Greyjoy));
+        track.add(PlayerList.PlayerOfHouse(HouseName.Tyrell));
+        super.removeNull();
     }
 
 }

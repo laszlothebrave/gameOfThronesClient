@@ -1,15 +1,11 @@
 package message_pack;
 
-import data_pack.*;
+import data_pack.PlayerName;
 
-public abstract class Message {
-    PlayerName playerName;
+public class Message {
+    PlayerName player;
 
-    public Message (PlayerName playerName){
-        this.playerName = playerName;
-    }
-
-    public PlayerName getPlayerName() {
-        return playerName;
+    Message (PlayerName player){
+        this.player = player;
     }
 }

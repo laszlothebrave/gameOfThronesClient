@@ -1,26 +1,23 @@
 package data_pack;
 
-import data_pack.house_pack.House;
 import data_pack.house_pack.HouseName;
-import data_pack.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PlayerList {
 
-    private ArrayList <Player> playerList;
-    private ArrayList <House> houseList;
+    static private HashMap <HouseName, Player> playerHashMap;
 
     PlayerList(ArrayList<PlayerName> playerNameList){
-        playerList = new ArrayList<>();
-        for (int counter = 0; counter < playerNameList.size(); counter++){
-            playerList.add(new Player(playerNameList.get(counter)));
-        }
-        SelectHouses();
+
     }
 
-    private void SelectHouses() {
+    static public Player PlayerOfHouse (HouseName houseName) {
+        return playerHashMap.get(houseName);
+    }
 
+    static public int getNumberOfPlayers () {
+        return playerHashMap.size();
     }
 }

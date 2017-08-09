@@ -47,11 +47,11 @@ public class OrderList {
         area.setOrder(null);
     }
 
-    public void setNumberOfStar(int numberOfStar) {
+    public void setNumberOfStars(int numberOfStar) {
         this.numberOfStar = numberOfStar;
     }
 
-    public int getNumberOfStar() {
+    public int getNumberOfStars() {
         return numberOfStar;
     }
 }
